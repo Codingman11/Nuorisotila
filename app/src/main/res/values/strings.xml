@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Nuorisotila</string>
+    <string name="addevent">addEvent</string>
 </resources>

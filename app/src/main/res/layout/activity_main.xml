@@ -33,5 +33,21 @@
         android:layout_marginTop="39dp"
         android:layout_marginBottom="0dp" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:backgroundTint="#020202"
+
+        android:clickable="true"
+        android:contentDescription="@string/addevent"
+        android:focusable="auto"
+        android:layout_marginTop="500dp"
+
+        android:layout_marginLeft="320dp"
+        android:tint="#FFFFFF"
+        app:srcCompat="@drawable/ic_add_circle" />
+
 
 </RelativeLayout>

@@ -89,7 +89,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#FDFDFD"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
 
                     <Button
                         android:id="@+id/btnDeleteEvent"
@@ -110,11 +111,7 @@
                         android:layout_weight="1"
                         android:text="Kävijälaskuri: " />
                 </LinearLayout>
-
-
             </LinearLayout>
-
-
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
