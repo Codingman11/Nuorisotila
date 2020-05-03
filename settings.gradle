@@ -1,0 +1,2 @@
+rootProject.name='Nuorisotila'
+include ':app'
