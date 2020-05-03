@@ -4,20 +4,34 @@ import java.util.Date;
 
 public class Event {
 
-    private String name;
-    private String desc;
-    private Date date;
+    private String title;
+    private String date;
     private String place;
+    private String desc;
+    private int image;
 
-    public Event() {
+    public Event(String title, String date, String place,  String desc, int image) {
+        this.title = title;
+        this.date = date;
+        this.place = place;
+        this.desc = desc;
+        this.image = image;
     }
 
-    public String getName() {
-        return name;
+    public int getImage() {
+        return image;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDesc() {
@@ -28,11 +42,11 @@ public class Event {
         this.desc = desc;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -42,9 +56,5 @@ public class Event {
 
     public void setPlace(String place) {
         this.place = place;
-    }
-
-    public String toString() {
-        return "";
     }
 }
