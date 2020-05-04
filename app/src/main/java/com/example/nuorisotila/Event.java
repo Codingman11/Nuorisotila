@@ -1,30 +1,34 @@
 package com.example.nuorisotila;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
-public class Event {
+public class Event implements Serializable {
 
+    private int id;
     private String title;
     private String date;
     private String place;
     private String desc;
-    private int image;
+    //private int image;
 
-    public Event(String title, String date, String place,  String desc, int image) {
+    public Event(String title, String date, String place,  String desc) {
+
         this.title = title;
         this.date = date;
         this.place = place;
         this.desc = desc;
-        this.image = image;
+        //this.image = image;
     }
 
-    public int getImage() {
+    /*public int getImage() {
         return image;
     }
 
     public void setImage(int image) {
         this.image = image;
-    }
+    }*/
 
     public String getTitle() {
         return title;
@@ -57,4 +61,6 @@ public class Event {
     public void setPlace(String place) {
         this.place = place;
     }
+
+
 }

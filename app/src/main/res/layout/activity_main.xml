@@ -43,9 +43,10 @@
         android:clickable="true"
         android:contentDescription="@string/addevent"
         android:focusable="auto"
-        android:layout_marginTop="500dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
 
-        android:layout_marginLeft="320dp"
         android:tint="#FFFFFF"
         app:srcCompat="@drawable/ic_add_circle" />
 

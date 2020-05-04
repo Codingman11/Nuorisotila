@@ -6,11 +6,11 @@ public class YouthLeader {
     private int age;
     private String phone;
     private String place;
-    public YouthLeader(String na, int ag, String pho, String pla) {
-        this.name = na;
-        this.age = ag;
-        this.phone = pho;
-        this.place = pla;
+    public YouthLeader(String na, int age, String phone, String place) {
+        this.name = name;
+        this.age = age;
+        this.phone = phone;
+        this.place = place;
     }
 
     public String getName() {

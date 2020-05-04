@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -23,12 +24,12 @@ RecyclerView.ViewHolder
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder>{
 
     private Context context;
-    private List<Event> eventsList;
+    public EventList eList = EventList.getInstance();
 
 
-    public EventAdapter(Context context, List<Event> eventsList) {
+    public EventAdapter(Context context) {
         this.context = context;
-        this.eventsList = eventsList;
+
     }
 
     @NonNull
@@ -42,7 +43,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     @Override
     public void onBindViewHolder(@NonNull EventViewHolder holder, int position) {
-        Event event = eventsList.get(position);
+        Event event = eList.getArray().get(position);
         @SuppressLint("SimpleDateFormat") SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-YYYY");
 
         holder.textViewTitle.setText(event.getTitle());
@@ -50,13 +51,13 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         holder.textViewDesc.setText(event.getDesc());
         holder.textViewPlace.setText(event.getPlace());
 
-        holder.imageView.setImageDrawable(context.getResources().getDrawable(event.getImage(), null));
+        //holder.imageView.setImageDrawable(context.getResources().getDrawable(event.getImage(), null));
 
     }
 
     @Override
     public int getItemCount() {
-        return eventsList.size();
+        return eList.getArray().size();
     }
 
     class EventViewHolder extends RecyclerView.ViewHolder {

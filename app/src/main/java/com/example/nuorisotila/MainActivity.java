@@ -10,17 +10,17 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
 
     RecyclerView recyclerView;
-    List<Event> eventsList;
+    EventList eList = EventList.getInstance();
+
     private Button Login;
     @Override
     protected void onCreate(Bundle savedInstanceState) { //test
@@ -31,26 +31,15 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        eventsList = new ArrayList<>();
+        //Eventlist initializing
 
-        eventsList.add(
-                new Event(
-                    "Koripallo",
-                        "21.12.2020, 19:30-22:00",
-                        "Hakaniemen nuorisotila",
-                        "Tervetuloa pelaamaan",
-                        R.drawable.basketball
-                ));
-        eventsList.add(
-                new Event(
-                        "Koripallo",
-                        "21.12.2020, 19:30-22:00",
-                        "Hakaniemen nuorisotila",
-                        "Tervetuloa pelaamaan",
-                        R.drawable.basketball
-                ));
 
-        EventAdapter adapter = new EventAdapter(this, eventsList);
+
+
+
+
+
+        EventAdapter adapter = new EventAdapter(this);
         recyclerView.setAdapter(adapter);
 
 
@@ -70,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(MainActivity.this, CreateEventActivity.class);
+                startActivity(intent);
             }
         });
 
